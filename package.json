@@ -1,5 +1,5 @@
 {
-  "name": "pushbots-api",
+  "name": "pushbots",
   "description": "An interface to Pushbots API.",
   "version": "0.0.1",
   "author": "Amr sobhy <amr@pushbots.com>",
