@@ -20,3 +20,9 @@ Pushbots.customNotificationTitle("CUSTOM TITLE");
 Pushbots.push(function(response){
 	console.log(response);
 });
+
+//to push to one device 
+var token = "APA91bEeYRWNVo2oc6DdTpSABGkqLm5QrTTbHVJbTGc6Bpjjlau";
+Pushbots.pushOne(token, function(response){
+    console.log(response);
+});
