@@ -8,54 +8,54 @@
  * Dependencies
  */
 var request = require('request'),
-	merge = require('merge');
+    merge = require('merge');
 
 var extend = function(target) {
-	Array.prototype.slice.call(arguments, 1).forEach(function(source) {
-		for (var key in source) {
-			if (source[key] !== undefined) {
-				target[key] = source[key];
-			}
-		}
-	});
+    Array.prototype.slice.call(arguments, 1).forEach(function(source) {
+        for (var key in source) {
+            if (source[key] !== undefined) {
+                target[key] = source[key];
+            }
+        }
+    });
 };
-	
+    
 /**
  * Constructor
  */
 function PushBots (options) {
-	
-	if(false === (this instanceof PushBots)) {
-		return new PushBots(options);
-	}
-	
+    
+    if(false === (this instanceof PushBots)) {
+        return new PushBots(options);
+    }
+    
     //default Options
-	this.options = {
-		version : 'v1',
-		url : 'api.pushbots.com',
-		ssl : true		
-	};
-	
-	for (var key in options) {
-		if (options[key] == null) {
-			console.log("Option [" + key + "] set to null. This may cause unexpected behaviour.");
-		}
-	}
-	
-	extend(this.options, options);
-	
-	if(!this.options.id || !this.options.secret){
-		console.log("Application ID and secret are required");
-	}
-	
+    this.options = {
+        version : 'v1',
+        url : 'api.pushbots.com',
+        ssl : true      
+    };
+    
+    for (var key in options) {
+        if (options[key] == null) {
+            console.log("Option [" + key + "] set to null. This may cause unexpected behaviour.");
+        }
+    }
+    
+    extend(this.options, options);
+    
+    if(!this.options.id || !this.options.secret){
+        console.log("Application ID and secret are required");
+    }
+    
     this.url =  this.options.url;
     this.version = this.options.version;
     this.ssl =  this.options.ssl;
-	
+    
     this.token = this.options.token;
     this.appid =  this.options.id;
     this.appsecret =  this.options.secret;
-	
+    
     this.data = {};
 }
 
@@ -78,16 +78,16 @@ PushBots.prototype.request = function (method, url,data, callback) {
     }
     // Construct headers
     var req_headers = { 
-  	  	'X-PUSHBOTS-APPID':self.appid,
-   	 	'X-PUSHBOTS-SECRET':self.appsecret,
-    	'Content-Type' : 'application/json'
+        'X-PUSHBOTS-APPID':self.appid,
+        'X-PUSHBOTS-SECRET':self.appsecret,
+        'Content-Type' : 'application/json'
     };
-	
-	
-	if(self.token != undefined)
-		req_headers['X-PushBots-token'] = self.token;
-	
-	
+    
+    
+    if(self.token != undefined)
+        req_headers['X-PushBots-token'] = self.token;
+    
+    
     // HTTP request
     request({
         method:     method,
@@ -98,8 +98,8 @@ PushBots.prototype.request = function (method, url,data, callback) {
         console.log(protocole+'://'+self.url + url);
         if (err) return callback(err);
         ret = { "code": response.statusCode };
-		if(body)
-			ret['body'] = body;
+        if(body)
+            ret['body'] = body;
         //if (response.statusCode < 200 || response.statusCode > 302) return callback(ret);
         callback(ret);
     });
@@ -238,6 +238,18 @@ PushBots.prototype.setNotificationType = function (type,data) {
 PushBots.prototype.push = function ( callback) {
     console.log(this.data);
     var url = '/push/all';
+    this.request('POST', url,this.data, callback);
+};
+
+/**
+ * pushOne method.
+ *
+ * @return {Object}
+ */
+PushBots.prototype.pushOne = function (token, callback) {
+    this.data.token = token;
+    console.log(this.data);
+    var url = '/push/one';
     this.request('POST', url,this.data, callback);
 };
 
