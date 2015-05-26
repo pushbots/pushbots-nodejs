@@ -17,6 +17,8 @@ var Pushbots = new pushbots.api({
 Pushbots.setMessage("Hi from new nodeJS API!" ,1);
 Pushbots.customFields({"article_id":"1234"});
 Pushbots.customNotificationTitle("CUSTOM TITLE");
+
+//to push to all
 Pushbots.push(function(response){
 	console.log(response);
 });
