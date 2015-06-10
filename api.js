@@ -138,6 +138,16 @@ PushBots.prototype.sendByAlias = function ( alias) {
         this.data.alias = alias;
 };
 /**
+ * Tags method.
+ *
+ * @param {array} tags
+ *
+ */
+PushBots.prototype.sendByTags = function ( tags) {
+        this.data.tags = tags;
+};
+
+/**
  * sendByToken method.
  *
  * @param {string} token
