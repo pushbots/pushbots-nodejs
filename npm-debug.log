@@ -1,0 +1,73 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.6
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Volumes/Coding/htdocs/pushbots-nodejs',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/amrsobhy/.npm/pushbots/0.0.3/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/amrsobhy/.npm/pushbots/0.0.3/package.tgz',
+9 verbose tar pack   '/Volumes/Coding/htdocs/pushbots-nodejs' ]
+10 verbose tarball /Users/amrsobhy/.npm/pushbots/0.0.3/package.tgz
+11 verbose folder /Volumes/Coding/htdocs/pushbots-nodejs
+12 info prepublish pushbots@0.0.3
+13 verbose addLocalTarball adding from inside cache /Users/amrsobhy/.npm/pushbots/0.0.3/package.tgz
+14 silly cache afterAdd pushbots@0.0.3
+15 verbose afterAdd /Users/amrsobhy/.npm/pushbots/0.0.3/package/package.json not in flight; writing
+16 verbose afterAdd /Users/amrsobhy/.npm/pushbots/0.0.3/package/package.json written
+17 silly publish { name: 'pushbots',
+17 silly publish   description: 'An interface to Pushbots API.',
+17 silly publish   version: '0.0.3',
+17 silly publish   author: { name: 'Amr sobhy', email: 'amr@pushbots.com' },
+17 silly publish   contributors: [ { name: 'Abdullah Diaa', email: 'abdullah@pushbots.com' } ],
+17 silly publish   keywords: [ 'pushbots', 'push', 'push notifications', 'api' ],
+17 silly publish   main: 'index.js',
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/pushbots/pushbots-nodejs.git' },
+17 silly publish   dependencies: { request: '^2.53.0', merge: '1.2.x' },
+17 silly publish   engines: { node: '>= 0.6.14' },
+17 silly publish   license: 'MIT',
+17 silly publish   readme: '# pushbots-nodejs\n\n### Installation\n```bash\nnpm install pushbots\n```\n\n### Usage\n\n```javascript\n\nvar pushbots = require(\'pushbots\');\nvar Pushbots = new pushbots.api({\n\tid:\'548ef5901d0ab1f3228b456a\',\n\tsecret:\'646f1ac2fd86ea14ae5a95db7fef724c\'\n});\nPushbots.setMessage("Hi from new nodeJS API!");//sending to (android and ios) platforms by default add optional paramater "0" for iOS, "1" for Android and "2" for Chrome.\nPushbots.customFields({"article_id":"1234"});\nPushbots.customNotificationTitle("CUSTOM TITLE");\n//to send by tags\nPushbots.sendByTags(["myTag"]);\n\n//to push to all\nPushbots.push(function(response){\n\tconsole.log(response);\n});\n\n//to push to one device \nvar token = "APA91bEeYRWNVo2oc6DdTpSABGkqLm5QrTTbHVJbTGc6Bpjjlau";\nPushbots.pushOne(token, function(response){\n    console.log(response);\n});\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '870826f983411dfbfb1791cf820a633a1e1f7cf2',
+17 silly publish   bugs: { url: 'https://github.com/pushbots/pushbots-nodejs/issues' },
+17 silly publish   homepage: 'https://github.com/pushbots/pushbots-nodejs#readme',
+17 silly publish   _id: 'pushbots@0.0.3',
+17 silly publish   scripts: {},
+17 silly publish   _shasum: '24c99d055ffa6ef9142dd6920fe97cce915c16e7',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name pushbots
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/pushbots
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/amrsobhy/.npm/pushbots/0.0.3/package.tgz
+25 verbose stack Error: auth required for publishing
+25 verbose stack     at CachingRegistryClient.publish (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:30:14)
+25 verbose stack     at /usr/local/lib/node_modules/npm/lib/publish.js:134:14
+25 verbose stack     at mapToRegistry (/usr/local/lib/node_modules/npm/lib/utils/map-to-registry.js:55:3)
+25 verbose stack     at publish_ (/usr/local/lib/node_modules/npm/lib/publish.js:104:3)
+25 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+25 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+25 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+25 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+25 verbose stack     at /usr/local/lib/node_modules/npm/lib/publish.js:73:5
+25 verbose stack     at RES (/usr/local/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+26 verbose cwd /Volumes/Coding/htdocs/pushbots-nodejs
+27 error Darwin 15.3.0
+28 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+29 error node v4.2.6
+30 error npm  v2.14.12
+31 error code ENEEDAUTH
+32 error need auth auth required for publishing
+32 error need auth You need to authorize this machine using `npm adduser`
+33 verbose exit [ 1, true ]

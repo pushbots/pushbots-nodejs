@@ -1,7 +1,7 @@
 {
   "name": "pushbots",
   "description": "An interface to Pushbots API.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Amr sobhy <amr@pushbots.com>",
   "contributors": [
     {
