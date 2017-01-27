@@ -253,6 +253,15 @@ PushBots.prototype.pushOne = function(token, callback) {
     var url = '/push/one';
     this.request('POST', url, this.data, callback);
 };
+
+PushBots.prototype.pushByToken = function(tokens, callback) {
+    this.data.platform = checkToken(token);
+    this.data.tokens = tokens;
+    console.log(this.data);
+    var url = '/push/one';
+    this.request('POST', url, this.data, callback);
+};
+
 /**
  * listDevices method.
  * List devices app given id and secret of app.

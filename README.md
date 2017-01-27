@@ -30,3 +30,9 @@ var token = "APA91bEeYRWNVo2oc6DdTpSABGkqLm5QrTTbHVJbTGc6Bpjjlau";
 Pushbots.pushOne(token, function(response){
     console.log(response);
 });
+
+//to push to multiple device up to 1,000 token
+var tokens = ["APA91bEeYRWNVo2oc6DdTpSABGkqLm5QrTTbHVJbTGc6Bpjjlau"];
+Pushbots.pushByToken(tokens, function(response){
+    console.log(response);
+});
