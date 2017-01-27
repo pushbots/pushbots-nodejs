@@ -255,7 +255,7 @@ PushBots.prototype.pushOne = function(token, callback) {
 };
 
 PushBots.prototype.pushByToken = function(tokens, callback) {
-    this.data.platform = checkToken(token);
+    this.data.platform = checkToken(tokens[0]);
     this.data.tokens = tokens;
     console.log(this.data);
     var url = '/push/one';
