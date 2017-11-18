@@ -44,11 +44,10 @@ Pushbots.pushByToken(tokens, function(response){
 
 ## Contributors
 
-Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+Thanks goes to these wonderful people:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 | [<img src="https://avatars0.githubusercontent.com/u/6784122?v=4" width="50px;"/><br /><sub><b>amrsobhy</b></sub>](http://amrsobhy.com)<br />[💻](https://github.com/PushBots/pushbots-nodejs/commits?author=amrsobhy "Code") | [<img src="https://avatars2.githubusercontent.com/u/733794?v=4" width="50px;"/><br /><sub><b>Abdullah Diaa</b></sub>](https://abdullahdiaa.com)<br />[💻](https://github.com/PushBots/pushbots-nodejs/commits?author=AbdullahDiaa "Code") |
 | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+Contributions of any kind welcome!
