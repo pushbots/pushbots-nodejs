@@ -1,7 +1,6 @@
 # pushbots-nodejs
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 [![npm](https://img.shields.io/npm/dt/pushbots.svg)](https://www.npmjs.com/package/pushbots)
-
 [![npm](https://img.shields.io/npm/v/pushbots.svg)](https://www.npmjs.com/package/pushbots)
 
 ### Installation
