@@ -37,6 +37,7 @@ var tokens = ["APA91bEeYRWNVo2oc6DdTpSABGkqLm5QrTTbHVJbTGc6Bpjjlau"];
 Pushbots.pushByToken(tokens, function(response){
     console.log(response);
 });
+```
 
 ## Contributors
 
