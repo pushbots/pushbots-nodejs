@@ -1,0 +1,20 @@
+{
+  "projectName": "pushbots-nodejs",
+  "projectOwner": "PushBots",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 50,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "amrsobhy",
+      "name": "amrsobhy",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6784122?v=4",
+      "profile": "http://amrsobhy.com",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
+}
