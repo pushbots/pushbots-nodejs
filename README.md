@@ -2,7 +2,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 [![npm](https://img.shields.io/npm/dt/pushbots.svg)](https://www.npmjs.com/package/pushbots)
 [![npm](https://img.shields.io/npm/v/pushbots.svg)](https://www.npmjs.com/package/pushbots)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/pushbots.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=pushbots)
+[![Twitter Follow](https://img.shields.io/twitter/follow/pushbots.svg?style=social&label=Follow&style=plastic)](https://twitter.com/pushbots)
 
 ### Installation
 ```bash
