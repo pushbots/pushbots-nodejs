@@ -82,7 +82,8 @@ PushBots.prototype.request = function(method, url, data, callback) {
     var req_headers = {
         'X-PUSHBOTS-APPID': self.appid,
         'X-PUSHBOTS-SECRET': self.appsecret,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Source':'Nodejs'
     };
     if (self.token != undefined) req_headers['X-PushBots-token'] = self.token;
     // HTTP request
@@ -238,7 +239,7 @@ PushBots.prototype.setNotificationType = function(type, data) {
  */
 PushBots.prototype.push = function(callback) {
     console.log(this.data);
-    var url = '/push/all';
+    var url = 'push/all';
     this.request('POST', url, this.data, callback);
 };
 /**
@@ -250,7 +251,7 @@ PushBots.prototype.pushOne = function(token, callback) {
     this.data.platform = checkToken(token);
     this.data.token = token;
     console.log(this.data);
-    var url = '/push/one';
+    var url = 'push/one';
     this.request('POST', url, this.data, callback);
 };
 
@@ -258,7 +259,7 @@ PushBots.prototype.pushByToken = function(tokens, callback) {
     this.data.platform = checkToken(tokens[0]);
     this.data.tokens = tokens;
     console.log(this.data);
-    var url = '/push/one';
+    var url = 'push/one';
     this.request('POST', url, this.data, callback);
 };
 
