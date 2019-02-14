@@ -182,7 +182,7 @@ PushBots.prototype.nextActivity = function(activity) {
  *
  */
 PushBots.prototype.customNotificationTitle = function(customNotificationTitle) {
-    this.data.payload.customNotificationTitle = customNotificationTitle;
+    this.data.payload.nTitle = customNotificationTitle;
 };
 /**
  * buttonOne method.
