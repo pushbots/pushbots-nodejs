@@ -114,7 +114,6 @@ PushBots.prototype.setMessage = function(msg, platform) {
     platform = (typeof platform === 'undefined') ? [0,1] : platform;
     this.data.msg = msg;
     this.data.platform = platform;
-    this.data.payload = {};
 };
 /**
  * badge method.
@@ -161,9 +160,11 @@ PushBots.prototype.sendByToken = function(token) {
  *
  */
 PushBots.prototype.buttonOne = function(icon, text, action) {
-    this.data.payload.button1Icon = icon;
-    this.data.payload.button1Title = text;
-    this.data.payload.button1Action = action;
+  this.customFields({
+    button1Icon: icon,
+    button1Title: text,
+    button1Action: action
+  });
 };
 /**
  * nextActivity method.
@@ -173,7 +174,9 @@ PushBots.prototype.buttonOne = function(icon, text, action) {
  *
  */
 PushBots.prototype.nextActivity = function(activity) {
-    this.data.payload.nextActivity = activity;
+  this.customFields({
+    nextActivity: activity
+  });
 };
 /**
  * customNotificationTitle method.
@@ -182,7 +185,9 @@ PushBots.prototype.nextActivity = function(activity) {
  *
  */
 PushBots.prototype.customNotificationTitle = function(customNotificationTitle) {
-    this.data.payload.customNotificationTitle = customNotificationTitle;
+  this.customFields({
+    nTitle: customNotificationTitle
+  });
 };
 /**
  * buttonOne method.
@@ -193,9 +198,11 @@ PushBots.prototype.customNotificationTitle = function(customNotificationTitle) {
  *
  */
 PushBots.prototype.buttonTwo = function(icon, text, action) {
-    this.data.payload.button2Icon = icon;
-    this.data.payload.button2Title = text;
-    this.data.payload.button2Action = action;
+  this.customFields({
+    button2Icon: icon,
+    button2Title: text,
+    button2Action: action
+  });
 };
 /**
  * customIcon method.
@@ -204,7 +211,9 @@ PushBots.prototype.buttonTwo = function(icon, text, action) {
  *
  */
 PushBots.prototype.customIcon = function(icon) {
-    this.data.payload.customIcon = icon;
+  this.customFields({
+    customIcon: icon
+  });
 };
 /**
  * largeIcon method.
@@ -213,7 +222,9 @@ PushBots.prototype.customIcon = function(icon) {
  *
  */
 PushBots.prototype.largeIcon = function(url) {
-    this.data.payload.largeIcon = url;
+  this.customFields({
+    largeIcon: url
+  });
 };
 /**
  * setNotificationType method.
@@ -223,14 +234,18 @@ PushBots.prototype.largeIcon = function(url) {
  *
  */
 PushBots.prototype.setNotificationType = function(type, data) {
-    if (type == "bigPicture") {
-        this.data.payload.BigPictureStyle = true;
-        this.data.payload.imgUrl = data.imgUrl;
-    } else if (type == "bigText") {
-        this.data.payload.BigTextStyle = true;
-        this.data.payload.bigText = data.bigText;
-        this.data.payload.keepText = data.keepText || '';
-    }
+  if (type == "bigPicture") {
+    this.customFields({
+      BigPictureStyle: true,
+      imgUrl: data.imgUrl
+    });
+  } else if (type == "bigText") {
+    this.customFields({
+      BigTextStyle: true,
+      bigText: data.bigText,
+      keepText: data.keepText || ""
+    });
+  }
 };
 /**
  * push method.
@@ -276,10 +291,9 @@ PushBots.prototype.listDevices = function(callback) {
  * customFields method.
  *
  * @param {object} obj
- * @param {string} platform
  *
  */
-PushBots.prototype.customFields = function(obj, platform) {
+PushBots.prototype.customFields = function(obj) {
     this.data.payload = merge(this.payload, obj);
 };
 /**
