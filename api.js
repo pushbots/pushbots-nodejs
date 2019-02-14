@@ -276,10 +276,9 @@ PushBots.prototype.listDevices = function(callback) {
  * customFields method.
  *
  * @param {object} obj
- * @param {string} platform
  *
  */
-PushBots.prototype.customFields = function(obj, platform) {
+PushBots.prototype.customFields = function(obj) {
     this.data.payload = merge(this.payload, obj);
 };
 /**
