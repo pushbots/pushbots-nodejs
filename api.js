@@ -294,7 +294,7 @@ PushBots.prototype.listDevices = function(callback) {
  *
  */
 PushBots.prototype.customFields = function(obj) {
-    this.data.payload = merge(this.payload, obj);
+    this.data.payload = merge(this.data.payload, obj);
 };
 /**
  * Export
